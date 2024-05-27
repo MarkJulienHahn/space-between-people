@@ -1,12 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+
+import useWindowDimensions from "../_Hooks/useWindowDimensions";
 
 import { useRouter } from "next/navigation";
 
 const WorkIndexEntry = ({ entry, setIndex }) => {
   const [columnWidth, setColumnWidth] = useState(300);
+
+  const { windowWidth } = useWindowDimensions();
 
   const aspectRatio = entry?.images[0].asset.metadata.dimensions.aspectRatio;
 
@@ -15,6 +19,10 @@ const WorkIndexEntry = ({ entry, setIndex }) => {
     await setIndex(false);
     router.push(`/work#${entry.slug.current}`);
   };
+
+  useEffect(() => {
+    windowWidth < 1000 && setColumnWidth(120);
+  }, [windowWidth]);
 
   return (
     <div className="indexEntry" onClick={handleClick}>

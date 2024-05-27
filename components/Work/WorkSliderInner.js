@@ -40,10 +40,7 @@ const WorkSliderInner = ({ image, sliderHeight, setSlideIndex, i }) => {
       <Image
         src={image.asset.url}
         fill
-        style={{
-          objectFit: "contain",
-          objectPosition: "left",
-        }}
+        className="sliderImage"
       />
     </div>
   );
