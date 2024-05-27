@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { LayoutRouterContext } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { useContext, useRef } from "react";
 
-function FrozenRouter(props: { children: React.ReactNode }) {
+function FrozenRouter(props) {
   const context = useContext(LayoutRouterContext ?? {});
   const frozen = useRef(context).current;
 
@@ -26,7 +26,7 @@ const variants = {
   exit: { opacity: 0, y: 0 },
 };
 
-const PageTransitionEffect = ({ children }: { children: React.ReactNode }) => {
+const PageTransitionEffect = ({ children }) => {
   // The `key` is tied to the url using the `usePathname` hook.
   const key = usePathname();
 
