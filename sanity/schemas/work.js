@@ -14,6 +14,14 @@ export default defineType({
       validation: (Rule) => Rule.required().min(3).max(80),
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+      },
+    },
+    {
       name: "year",
       title: "Select Year",
       type: "number",
@@ -77,15 +85,15 @@ export default defineType({
 
   preview: {
     select: {
-      title: 'title',
-      media: 'images.0.image', // adjusted path if nested differently
+      title: "title",
+      media: "images.0.image", // adjusted path if nested differently
     },
     prepare(selection) {
-      const {title, media} = selection;
+      const { title, media } = selection;
       return {
         title,
-        media: media || 'some-default-image'
-      }
-    }
+        media: media || "some-default-image",
+      };
+    },
   },
 });

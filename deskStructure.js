@@ -5,7 +5,7 @@ export const myStructure = (S, context) =>
     .title("Content")
     .items([
       S.listItem()
-        .title("s--b--p")
+        .title("Homepage")
         .id("home")
         .child(S.document().schemaType("home").documentId("home")),
 

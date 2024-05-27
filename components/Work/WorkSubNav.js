@@ -1,27 +1,44 @@
+"use client"
 import React from "react";
+
+import { useRouter } from "next/navigation";
 
 const active = { opacity: 0.4, cursor: "pointer" };
 const inActive = { opacity: 1, cursor: "default" };
 const inActiveClickable = { opacity: 1, cursor: "pointer" };
 
 const WorkSubNav = ({ categories, index, setIndex, filter, setFilter }) => {
+  const router = useRouter();
+
+  const handleFeed = async (e) => {
+    await setIndex(false);
+    router.push(`/work`, "/work", { shallow: true })
+  };
+
+  const handleIndex = async (e) => {
+    router.push(`/work?index`, "/work/index", { shallow: true })
+    setIndex(true);
+    // history.replaceState(null, "", `/work/index`);
+  };
+
   return (
     <div className="subNavWrapper">
       <div className="subNav categoriesLeft">
-        <span
-          onClick={() => setIndex(false)}
-          style={!index ? inActive : active}
-        >
+        <span onClick={() => handleFeed()} style={!index ? inActive : active}>
           Feed
         </span>
-        <span onClick={() => setIndex(true)} style={index ? inActive : active}>
+        <span onClick={() => handleIndex()} style={index ? inActive : active}>
           Index
         </span>
       </div>
       <div className="subNav categoriesRight">
         {categories.map((category, i) => (
           <span
-            style={filter == category?.slug.current || filter == "" ? inActiveClickable : active}
+            style={
+              filter == category?.slug.current || filter == ""
+                ? inActiveClickable
+                : active
+            }
             onClick={
               filter == category?.slug.current
                 ? () => setFilter("")

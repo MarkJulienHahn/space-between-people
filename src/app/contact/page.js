@@ -3,8 +3,6 @@ import { PortableText } from "next-sanity";
 
 export default async function page() {
   const contact = await getContact();
-
-  console.log(contact[0]);
   return (
     <div className="contactWrapper">
       <div className="col-50 caption">

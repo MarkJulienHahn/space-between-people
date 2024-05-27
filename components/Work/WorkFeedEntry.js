@@ -4,8 +4,9 @@ import { PortableText } from "next-sanity";
 import WorkSlider from "./WorkSlider";
 
 const WorkFeedEntry = ({ entry }) => {
+
   return (
-    <div className="workWrapper">
+    <div className="workWrapper" id={entry.slug.current}>
       <div className="workInfos">
         <div className="workInfosSection">
           <p className="workInfoYear">{entry?.year}</p>

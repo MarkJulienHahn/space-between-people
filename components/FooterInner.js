@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Footer({ contact }) {
   const [isClient, setIsClient] = useState(false);
@@ -24,20 +25,40 @@ export default function Footer({ contact }) {
       </div>
       <div className="siteMap">
         <ul>
-          <li>Work</li>
-          <li>Feed</li>
-          <li>Index</li>
+          <li>
+            <Link href="/work">Work</Link>
+          </li>
+          <li>
+            <Link href="/work">Feed</Link>
+          </li>
+          <li>
+            <Link href="/work/index">Index</Link>
+          </li>
         </ul>
         <ul>
-          <li>About</li>
-          <li>Design</li>
-          <li>Research</li>
-          <li>Consulting</li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/about#design">Design</Link>
+          </li>
+          <li>
+            <Link href="/about#research">Research</Link>
+          </li>
+          <li>
+            <Link href="/about#consulting">Consulting</Link>
+          </li>
         </ul>
         <ul>
-          <li>Contact</li>
-          <li>Imprint</li>
-          <li>Privacy</li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link href="/contact/imprint">Imprint</Link>
+          </li>
+          <li>
+            <Link href="/contact/privacy">Privacy</Link>
+          </li>
         </ul>
       </div>
     </div>

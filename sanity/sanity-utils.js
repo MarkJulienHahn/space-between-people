@@ -33,3 +33,11 @@ export async function getContact() {
 export async function getCategories() {
   return client.fetch(groq`*[_type == "categories"]{...}`);
 }
+
+export async function getImprint() {
+  return client.fetch(groq`*[_type == "imprint"]{...}`);
+}
+
+export async function getPrivacy() {
+  return client.fetch(groq`*[_type == "privacy"]{...}`);
+}

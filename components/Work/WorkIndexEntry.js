@@ -3,16 +3,21 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-const WorkIndexEntry = ({ entry }) => {
+import { useRouter } from "next/navigation";
+
+const WorkIndexEntry = ({ entry, setIndex }) => {
   const [columnWidth, setColumnWidth] = useState(300);
 
   const aspectRatio = entry?.images[0].asset.metadata.dimensions.aspectRatio;
 
-  const height = entry?.images[0].asset.metadata.dimensions.height;
-  const width = entry?.images[0].asset.metadata.dimensions.width;
+  const router = useRouter();
+  const handleClick = async () => {
+    await setIndex(false);
+    router.push(`/work#${entry.slug.current}`);
+  };
 
   return (
-    <div className="indexEntry">
+    <div className="indexEntry" onClick={handleClick}>
       <div className="indexImgWrapper">
         <Image
           src={entry?.images[0].asset.url}
