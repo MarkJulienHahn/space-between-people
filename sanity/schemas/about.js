@@ -12,6 +12,13 @@ export default defineType({
       type: "object",
       fields: [
         {
+          title: "Category",
+          name: "category",
+          type: "reference",
+          to: [{ type: "categories" }],
+          validation: (Rule) => Rule.required(),
+        },
+        {
           name: "headline",
           title: "Headline",
           type: "array",
@@ -71,6 +78,13 @@ export default defineType({
       type: "object",
       fields: [
         {
+          title: "Category",
+          name: "category",
+          type: "reference",
+          to: [{ type: "categories" }],
+          validation: (Rule) => Rule.required(),
+        },
+        {
           name: "headline",
           title: "Headline",
           type: "array",
@@ -129,6 +143,13 @@ export default defineType({
       title: "Consulting",
       type: "object",
       fields: [
+        {
+          title: "Category",
+          name: "category",
+          type: "reference",
+          to: [{ type: "categories" }],
+          validation: (Rule) => Rule.required(),
+        },
         {
           name: "headline",
           title: "Headline",

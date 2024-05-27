@@ -52,6 +52,7 @@ export default defineType({
     },
     { name: "email", title: "Email", type: "string" },
     { name: "phone", title: "Phone", type: "string" },
+    { name: "newsletterMessage", title: "Newsletter Message", type: "string" },
   ],
   preview: {
     prepare() {

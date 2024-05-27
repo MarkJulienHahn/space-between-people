@@ -66,7 +66,7 @@ export default defineType({
     },
     {
       title: "Category",
-      name: "Category",
+      name: "category",
       type: "reference",
       to: [{ type: "categories" }],
       validation: (Rule) => Rule.required(),
@@ -84,7 +84,7 @@ export default defineType({
       const {title, media} = selection;
       return {
         title,
-        media: media || 'some-default-image' // Fallback image if the first is not available
+        media: media || 'some-default-image'
       }
     }
   },
