@@ -37,11 +37,7 @@ const WorkSliderInner = ({ image, sliderHeight, setSlideIndex, i }) => {
         ref={imgRef}
         style={{ width: "20px", height: "20px" }}
       ></div>
-      <Image
-        src={image.asset.url}
-        fill
-        className="sliderImage"
-      />
+      <Image src={image.asset.url} fill className="sliderImage" />
     </div>
   );
 };

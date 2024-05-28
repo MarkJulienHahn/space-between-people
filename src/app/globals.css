@@ -17,7 +17,7 @@
 
   --fontSize-M: 38.25px;
   --lineHeight-M: 39.5px;
-  --letterSpacing-M: 1px;
+  --letterSpacing-M: -0.5px;
 
   --fontSize-L: 85px;
   --lineHeight-L: 85.85px;
@@ -43,6 +43,7 @@
 
     --fontSize-M: 28.25px;
     --lineHeight-M: 32px;
+    --letterSpacing-M: -0.5px;
 
     --fontSize-L: 85px;
     --lineHeight-L: 85.85px;
@@ -325,6 +326,7 @@ ul {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  padding-top: var(--space-L);
 }
 
 .indexEntry {
@@ -345,8 +347,10 @@ ul {
 
 .indexImgWrapper {
   width: 100%;
-  /* min-height: 300px;
-  max-height: 400px; */
+  hyphens: auto;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
   position: relative;
 }
 
@@ -462,7 +466,7 @@ ul {
 }
 
 .aboutEntryWrapper {
-  padding: 0 var(--space-S) var(--space-XL);
+  padding: 0 var(--space-S) calc(2 * var(--space-L));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -491,8 +495,16 @@ ul {
   width: 100%;
 }
 
-.aboutEntry img {
+.aboutEntry img,
+.aboutEntryMobile img {
   border-radius: 15px;
+  padding-bottom: var(--space-S);
+}
+
+.aboutEntryMobile {
+  display: none;
+  margin: var(--space-S) 0 0 0;
+  width: 100%;
 }
 
 /* CONTACT */
@@ -533,6 +545,10 @@ ul {
 }
 
 @media screen and (max-width: 1000px) {
+  h1 em {
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+  }
   .pageWrapper {
     padding: var(--space-S);
   }
@@ -694,5 +710,40 @@ ul {
   .workInfosSection {
     display: block;
     width: 100%;
+  }
+  .workInfos {
+    padding-top: 120px;
+    margin-top: -120px;
+  }
+  .workSlider {
+    margin-top: var(--space-S);
+  }
+  .index {
+    margin-top: var(--space-XS);
+  }
+  .sliderImage {
+    object-fit: cover;
+    object-position: center;
+  }
+  .scrollAnchor {
+    padding-top: 200px;
+    margin-top: -200px;
+  }
+  /* ABOUT */
+  .aboutEntry {
+    display: none;
+  }
+  .aboutEntryMobile {
+    display: block;
+  }
+  /* CONTACT */
+  .contactWrapper {
+    display: block;
+    padding-top: calc(2 * var(--space-L));
+    padding-bottom: var(--space-L);
+  }
+  .col-50 {
+    width: 100%;
+    padding-bottom: var(--space-M);
   }
 }

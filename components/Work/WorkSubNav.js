@@ -52,9 +52,9 @@ const WorkSubNav = ({ categories, index, setIndex, filter, setFilter }) => {
           ))}
         </div>
       </div>
+
       <div className="subNavWrapperMobile">
         <div className="subNavRow">
-          {" "}
           <span onClick={() => handleFeed()} style={!index ? inActive : active}>
             Feed
           </span>

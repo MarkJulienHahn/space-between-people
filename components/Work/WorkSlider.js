@@ -13,11 +13,12 @@ import WorkSliderInner from "./WorkSliderInner";
 const WorkSlider = ({ entry }) => {
   const [sliderHeight, setSliderHeight] = useState(null);
   const [slideIndex, setSlideIndex] = useState(1);
-  const { windowHeight } = useWindowDimensions();
+  const { windowHeight, windowWidth } = useWindowDimensions();
 
   useEffect(() => {
-    setSliderHeight(windowHeight - 25);
+    windowWidth > 1000 ? setSliderHeight(windowHeight - 25) : setSliderHeight(600);
   }, []);
+
   return (
     <div className="workSlider">
       <Swiper
