@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
+import HoverComp from "./HoverComp";
+
 import { usePathname } from "next/navigation";
 
 import { Squash as Hamburger } from "hamburger-react";
@@ -40,10 +42,16 @@ const Nav = () => {
                 pathname.includes("/contact")
                   ? "var(--space-XS)"
                   : `calc(50vw - ${homeRefWidth / 2}px)`,
+              pointerEvents:
+                pathname.includes("/work") ||
+                pathname.includes("/about") ||
+                pathname.includes("/contact")
+                  ? "auto"
+                  : "none",
             }}
           >
             <Link href={"/"} scroll={false}>
-              <h2>Space Between People</h2>
+              <HoverComp text={"Space Between People"} />
             </Link>
           </div>
 
@@ -54,6 +62,7 @@ const Nav = () => {
               pathname.includes("/work")
                 ? {
                     left: `calc(50vw - ${workRef?.current?.clientWidth / 2}px)`,
+                    pointerEvents: "none"
                   }
                 : pathname.includes("/about") || pathname.includes("/contact")
                 ? { left: `300px` }
@@ -63,7 +72,7 @@ const Nav = () => {
             }
           >
             <Link href={"/work"} scroll={false}>
-              <h2>Work</h2>
+              <HoverComp text={"Work"} />
             </Link>
           </div>
 
@@ -76,6 +85,7 @@ const Nav = () => {
                     left: `calc(50vw - ${
                       aboutRef?.current?.clientWidth / 2
                     }px)`,
+                    pointerEvents: "none"
                   }
                 : pathname == "/" || pathname.includes("/work")
                 ? { left: `calc(100vw - ${215}px)` }
@@ -85,7 +95,7 @@ const Nav = () => {
             }
           >
             <Link href={"/about"} scroll={false}>
-              <h2>About</h2>
+              <HoverComp text={"About"} />
             </Link>
           </div>
 
@@ -98,12 +108,14 @@ const Nav = () => {
                     left: `calc(50vw - ${
                       contactRef?.current?.clientWidth / 2
                     }px)`,
+                    pointerEvents: "none"
                   }
                 : { left: `calc(100vw - ${105}px)` }
             }
           >
             <Link href={"/contact"} scroll={false}>
-              <h2>Contact</h2>
+              {" "}
+              <HoverComp text={"Contact"} />
             </Link>
           </div>
         </div>

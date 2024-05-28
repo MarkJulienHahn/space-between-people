@@ -9,8 +9,6 @@ import AboutEntry from "./AboutEntry";
 const AboutPage = ({ categories, about }) => {
   const [active, setActive] = useState();
 
-  console.log(active);
-
   return (
     <>
       <div className="subNavWrapper">
