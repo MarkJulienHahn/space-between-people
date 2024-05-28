@@ -65,9 +65,9 @@ const Nav = () => {
                     pointerEvents: "none"
                   }
                 : pathname.includes("/about") || pathname.includes("/contact")
-                ? { left: `300px` }
+                ? { left: `270px` }
                 : {
-                    left: `calc(100vw - ${320}px)`,
+                    left: `calc(100vw - ${300}px)`,
                   }
             }
           >
@@ -88,9 +88,9 @@ const Nav = () => {
                     pointerEvents: "none"
                   }
                 : pathname == "/" || pathname.includes("/work")
-                ? { left: `calc(100vw - ${215}px)` }
+                ? { left: `calc(100vw - ${195}px)` }
                 : {
-                    left: `400px`,
+                    left: `375px`,
                   }
             }
           >
@@ -110,7 +110,7 @@ const Nav = () => {
                     }px)`,
                     pointerEvents: "none"
                   }
-                : { left: `calc(100vw - ${105}px)` }
+                : { left: `calc(100vw - ${95}px)` }
             }
           >
             <Link href={"/contact"} scroll={false}>

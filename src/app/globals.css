@@ -535,6 +535,7 @@ ul {
   padding: 360px var(--space-S);
   display: flex;
   width: 100%;
+  min-height: 100vh;
 }
 
 .col-50 {
