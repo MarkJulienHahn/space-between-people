@@ -51,22 +51,14 @@ export default defineType({
           ],
         },
         {
-          name: "images",
-          title: "Images",
-          type: "array",
-          validation: (Rule) => Rule.required(),
-          of: [
+          name: "image",
+          title: "Image",
+          type: "image",
+          fields: [
             {
-              name: "image",
-              title: "Image",
-              type: "image",
-              fields: [
-                {
-                  title: "Alternative Text",
-                  name: "alt",
-                  type: "string",
-                },
-              ],
+              title: "Alternative Text",
+              name: "alt",
+              type: "string",
             },
           ],
         },
@@ -117,22 +109,14 @@ export default defineType({
           ],
         },
         {
-          name: "images",
-          title: "Images",
-          type: "array",
-          validation: (Rule) => Rule.required(),
-          of: [
+          name: "image",
+          title: "Image",
+          type: "image",
+          fields: [
             {
-              name: "image",
-              title: "Image",
-              type: "image",
-              fields: [
-                {
-                  title: "Alternative Text",
-                  name: "alt",
-                  type: "string",
-                },
-              ],
+              title: "Alternative Text",
+              name: "alt",
+              type: "string",
             },
           ],
         },
@@ -140,7 +124,7 @@ export default defineType({
     },
     {
       name: "consulting",
-      title: "Consulting",
+      title: "Consultation",
       type: "object",
       fields: [
         {
@@ -183,27 +167,22 @@ export default defineType({
           ],
         },
         {
-          name: "images",
-          title: "Images",
-          type: "array",
-          validation: (Rule) => Rule.required(),
-          of: [
+          name: "image",
+          title: "Image",
+          type: "image",
+          fields: [
             {
-              name: "image",
-              title: "Image",
-              type: "image",
-              fields: [
-                {
-                  title: "Alternative Text",
-                  name: "alt",
-                  type: "string",
-                },
-              ],
+              title: "Alternative Text",
+              name: "alt",
+              type: "string",
             },
           ],
         },
       ],
     },
+
+    { name: "subjtectsTitle", title: "Subjects Title", type: "string" },
+
     {
       name: "subjects",
       title: "Subjects",

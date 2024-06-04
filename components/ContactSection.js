@@ -7,7 +7,7 @@ export default async function ContactSection() {
   return (
     <div className={"contactSection"}>
       <div className={"contactColumn"}>
-        <h1>Subjects that I like to talk about</h1>
+        <h1>{about[0].subjects?.subjectsTitle}</h1>
         <ul>
           {about[0].subjects.map((entry, i) => (
             <li key={i}>{entry}</li>

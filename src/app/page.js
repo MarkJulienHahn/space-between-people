@@ -34,9 +34,9 @@ export default async function page() {
               <h1>Research</h1>
             </div>
           </Link>
-          <Link href={"/about#consulting"}>
+          <Link href={"/about#consultation"}>
             <div className={"navButton"}>
-              <h1>Consulting</h1>
+              <h1>Consultation</h1>
             </div>
           </Link>
         </div>
@@ -45,3 +45,5 @@ export default async function page() {
     </main>
   );
 }
+
+export const revalidate = 10;

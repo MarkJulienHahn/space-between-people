@@ -51,7 +51,7 @@ const Nav = () => {
             }}
           >
             <Link href={"/"} scroll={false}>
-              <HoverComp text={"Space Between People"} />
+              <HoverComp text={`Space${" "}Between${" "}People`} />
             </Link>
           </div>
 

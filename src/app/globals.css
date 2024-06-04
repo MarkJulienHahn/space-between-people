@@ -222,7 +222,7 @@ ul {
   justify-content: center;
   align-items: center;
   z-index: 100;
-} 
+}
 
 .logoContainer.fade-out {
   opacity: 0;
@@ -293,6 +293,10 @@ ul {
   width: 360px;
 }
 
+.hover-effect-letter {
+  min-width: 5px;
+}
+
 /* WORK */
 
 .workWrapper {
@@ -322,6 +326,14 @@ ul {
 .workInfosSection {
   width: 50%;
   display: flex;
+}
+
+.workInfosText {
+  width: 50%;
+}
+
+.workInfosText p {
+  padding-bottom: 1em;
 }
 
 .workInfoYear {
@@ -516,11 +528,9 @@ ul {
   margin: var(--space-S) 0 0 0;
   width: 100%;
 }
-
 .aboutEntry img,
 .aboutEntryMobile img {
   border-radius: 13.5px;
-  padding-bottom: var(--space-S);
 }
 
 .aboutEntryMobile {
@@ -629,6 +639,7 @@ ul {
   .hover-effect-letter {
     display: inline-block;
     transition: transform 0.27s ease;
+    min-width: 10px;
   }
   .hamburgerWrapper {
     position: absolute;
@@ -754,6 +765,9 @@ ul {
   .scrollAnchor {
     padding-top: 180px;
     margin-top: -180px;
+  }
+  .workInfosText {
+    width: 100%;
   }
   /* ABOUT */
   .aboutEntry {

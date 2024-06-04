@@ -7,7 +7,7 @@ export default async function page() {
   const categories = await getCategories();
   return (
     <main>
-      <WorkPage categories={categories} work={work}/>
+      <WorkPage categories={categories} work={work} indexInitial={true}/>
     </main>
   );
 }

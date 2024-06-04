@@ -21,7 +21,7 @@ const AboutEntry = ({ content, subject, setActive }) => {
   }, []);
 
   useEffect(() => {
-    inView && setActive(content?.category?.slug?.current)
+    inView && setActive(content?.category?.slug?.current);
   }, [inView]);
 
   return (
@@ -35,32 +35,50 @@ const AboutEntry = ({ content, subject, setActive }) => {
       </h1>
       <h3>{subject}</h3>
       <PortableText value={content.description} />
+
       <div className="aboutEntry">
-        {content?.images.map((image, i) => (
-          <div
-            key={i}
-            style={{
-              position: "relative",
-              width: i % 2 !== 0 ? "75%" : "25%",
-              height: i % 2 !== 0 ? "900px" : "400px",
-              margin:
-                i % 2 !== 0 ? "0 0 0 var(--space-XS)" : "0 var(--space-XS) 0 0",
-            }}
-          >
-            {isClient && windowWidth && (
-              <Image
-                src={image.asset.url}
-                fill
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "center",
-                }}
-              />
-            )}
-          </div>
-        ))}
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "calc(100vh - 100px)",
+          }}
+        >
+          {isClient && windowWidth && (
+            <Image
+              src={content.image.asset.url}
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+            />
+          )}
+        </div>
       </div>
+
       <div className="aboutEntryMobile">
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "60vw",
+          }}
+        >
+          {isClient && windowWidth && (
+            <Image
+              src={content.image.asset.url}
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+            />
+          )}
+        </div>
+      </div>
+
+      {/* <div className="aboutEntryMobile">
         {content?.images.map((image, i) => (
           <div
             key={i}
@@ -82,7 +100,7 @@ const AboutEntry = ({ content, subject, setActive }) => {
             )}
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

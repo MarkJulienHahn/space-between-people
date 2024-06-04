@@ -46,7 +46,7 @@ export default function Footer({ contact }) {
             <Link href="/about#research">Research</Link>
           </li>
           <li>
-            <Link href="/about#consulting">Consulting</Link>
+            <Link href="/about#consultation">Consultation</Link>
           </li>
         </ul>
         <ul>

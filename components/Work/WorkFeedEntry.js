@@ -11,7 +11,7 @@ const WorkFeedEntry = ({ entry }) => {
           <p className="workInfoYear">{entry?.year}</p>
           <h2>{entry?.title}</h2>
         </div>
-        <div className="workInfosSection">
+        <div className="workInfosText">
           <PortableText value={entry.description} />
         </div>
       </div>

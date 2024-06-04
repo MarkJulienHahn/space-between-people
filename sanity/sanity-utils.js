@@ -22,7 +22,7 @@ export async function getWork() {
 
 export async function getAbout() {
   return client.fetch(
-    groq`*[_type == "about"]{..., design{..., "category": category->{...}, images[]{..., "asset": asset->{...}}}, consulting{..., "category": category->{...}, images[]{..., "asset": asset->{...}}}, research{..., "category": category->{...}, images[]{..., "asset": asset->{...}}}}`
+    groq`*[_type == "about"]{..., design{..., "category": category->{...}, image{..., "asset": asset->{...}}}, consulting{..., "category": category->{...}, image{..., "asset": asset->{...}}}, research{..., "category": category->{...}, image{..., "asset": asset->{...}}}}`
   );
 }
 
@@ -31,7 +31,7 @@ export async function getContact() {
 }
 
 export async function getCategories() {
-  return client.fetch(groq`*[_type == "categories"]{...}`);
+  return client.fetch(groq`*[_type == "categories"]|order(orderRank){...}`);
 }
 
 export async function getImprint() {

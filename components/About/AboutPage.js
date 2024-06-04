@@ -52,13 +52,13 @@ const AboutPage = ({ categories, about }) => {
           setActive={setActive}
         />
         <AboutEntry
-          content={about[0].consulting}
-          subject={"Consulting"}
+          content={about[0].research}
+          subject={"Research"}
           setActive={setActive}
         />
         <AboutEntry
-          content={about[0].research}
-          subject={"Research"}
+          content={about[0].consulting}
+          subject={"Consultation"}
           setActive={setActive}
         />
       </div>
