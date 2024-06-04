@@ -7,7 +7,7 @@ export default async function ContactSection() {
   return (
     <div className={"contactSection"}>
       <div className={"contactColumn"}>
-        <h1>{about[0].subjects?.subjectsTitle}</h1>
+        <h1>{about[0].subjectsTitle}</h1>
         <ul>
           {about[0].subjects.map((entry, i) => (
             <li key={i}>{entry}</li>
@@ -15,7 +15,7 @@ export default async function ContactSection() {
         </ul>
       </div>
       <div className={"contactColumn"}>
-        <h1>Questions? Just write us!</h1>
+        <h1>Questions? Just write me!</h1>
         <ul>
           <li>
             <a href={`mailto:${contact[0].email}`}>{contact[0].email}</a>

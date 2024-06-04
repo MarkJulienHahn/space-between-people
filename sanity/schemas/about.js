@@ -181,7 +181,7 @@ export default defineType({
       ],
     },
 
-    { name: "subjtectsTitle", title: "Subjects Title", type: "string" },
+    { name: "subjectsTitle", title: "Subjects Title", type: "string" },
 
     {
       name: "subjects",
