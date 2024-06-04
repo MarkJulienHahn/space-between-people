@@ -610,6 +610,10 @@ ul {
     padding-bottom: var(--space-S);
   }
 
+  .logoContainer {
+    transform: scale(0.8);
+  }
+
   /* NAV */
 
   .navWrapper {
