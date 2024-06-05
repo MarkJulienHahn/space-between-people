@@ -16,8 +16,12 @@ const WorkSlider = ({ entry }) => {
   const { windowHeight, windowWidth } = useWindowDimensions();
 
   useEffect(() => {
-    windowWidth > 1000 ? setSliderHeight(windowHeight - 25) : setSliderHeight(600);
+    windowWidth > 1000
+      ? setSliderHeight(windowHeight - 25)
+      : setSliderHeight(600);
   }, []);
+
+  console.log(entry);
 
   return (
     <div className="workSlider">
@@ -35,12 +39,15 @@ const WorkSlider = ({ entry }) => {
               sliderHeight={sliderHeight}
               setSlideIndex={setSlideIndex}
               i={i}
-            />
+            />{" "}
           </SwiperSlide>
         ))}
       </Swiper>
       <div className="index">
-        {slideIndex} / {entry?.images.length}
+        <span>
+          {slideIndex} / {entry?.images.length}
+        </span>
+        <span className="credit">{entry?.images[slideIndex - 1]?.credits}</span>
       </div>
     </div>
   );

@@ -88,6 +88,13 @@ body {
   color: var(--blue);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+  letter-spacing: var(--letterSpacing-XS);
+  font-variant-ligatures: contextual;
+  -moz-font-feature-settings: "calt";
+  -webkit-font-feature-settings: "calt";
+  font-feature-settings: "calt";
 }
 
 a {
@@ -374,6 +381,7 @@ ul {
 }
 
 .indexEntry p {
+  font-family: "MJH-Regular";
   font-size: var(--fontSize-XS);
   line-height: var(--lineHeight-XS);
   letter-spacing: var(--letterSpacing-XS);
@@ -386,6 +394,17 @@ ul {
   overflow-wrap: break-word;
   white-space: normal;
   position: relative;
+}
+
+.index {
+  display: flex;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.credit {
+  position: absolute;
+  transform: translateX(80px);
 }
 
 /* FOOTER */

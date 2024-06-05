@@ -64,6 +64,11 @@ export default defineType({
           type: "image",
           fields: [
             {
+              title: "Credits",
+              name: "credits",
+              type: "string",
+            },
+            {
               title: "Alternative Text",
               name: "alt",
               type: "string",

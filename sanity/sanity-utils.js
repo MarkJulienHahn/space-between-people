@@ -16,7 +16,7 @@ export async function getHome() {
 
 export async function getWork() {
   return client.fetch(
-    groq`*[_type == "work"]{..., images[]{..., "asset": asset->{...}}, "category": category->{title, slug}}`
+    groq`*[_type == "work"]|order(orderRank){..., images[]{..., "asset": asset->{...}}, "category": category->{title, slug}}`
   );
 }
 
