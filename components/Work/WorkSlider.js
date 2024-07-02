@@ -21,8 +21,6 @@ const WorkSlider = ({ entry }) => {
       : setSliderHeight(600);
   }, []);
 
-  console.log(entry);
-
   return (
     <div className="workSlider">
       <Swiper

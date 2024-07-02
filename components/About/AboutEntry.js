@@ -24,6 +24,18 @@ const AboutEntry = ({ content, subject, setActive }) => {
     inView && setActive(content?.category?.slug?.current);
   }, [inView]);
 
+  const customSerializers = {
+    marks: {
+      link: ({ children, value }) => {
+        return (
+          <a href={value?.href} target="_blank" rel="noopener noreferrer">
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+
   return (
     <div
       className="aboutEntryWrapper"
@@ -34,7 +46,10 @@ const AboutEntry = ({ content, subject, setActive }) => {
         <PortableText value={content.headline} />
       </h1>
       <h3>{subject}</h3>
-      <PortableText value={content.description} />
+      <PortableText
+        value={content.description}
+        components={customSerializers}
+      />
 
       <div className="aboutEntry">
         <div
@@ -77,30 +92,6 @@ const AboutEntry = ({ content, subject, setActive }) => {
           )}
         </div>
       </div>
-
-      {/* <div className="aboutEntryMobile">
-        {content?.images.map((image, i) => (
-          <div
-            key={i}
-            style={{
-              position: "relative",
-              width: "100%",
-              height: "300px",
-            }}
-          >
-            {isClient && windowWidth && (
-              <Image
-                src={image.asset.url}
-                fill
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "center",
-                }}
-              />
-            )}
-          </div>
-        ))}
-      </div> */}
     </div>
   );
 };
