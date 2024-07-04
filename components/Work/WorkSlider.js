@@ -18,7 +18,7 @@ const WorkSlider = ({ entry }) => {
   useEffect(() => {
     windowWidth > 1000
       ? setSliderHeight(windowHeight - 25)
-      : setSliderHeight(600);
+      : setSliderHeight(400);
   }, []);
 
   return (
@@ -37,7 +37,7 @@ const WorkSlider = ({ entry }) => {
               sliderHeight={sliderHeight}
               setSlideIndex={setSlideIndex}
               i={i}
-            />{" "}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
