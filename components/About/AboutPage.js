@@ -58,7 +58,7 @@ const AboutPage = ({ categories, about }) => {
         />
         <AboutEntry
           content={about[0].consulting}
-          subject={"Consultation"}
+          subject={"Collaboration"}
           setActive={setActive}
         />
       </div>

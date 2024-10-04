@@ -34,9 +34,9 @@ export default async function page() {
               <h1>Research</h1>
             </div>
           </Link>
-          <Link href={"/about#consultation"}>
+          <Link href={"/about#Collaboration"}>
             <div className={"navButton"}>
-              <h1>Consultation</h1>
+              <h1>Collaboration</h1>
             </div>
           </Link>
         </div>

@@ -124,7 +124,7 @@ export default defineType({
     },
     {
       name: "consulting",
-      title: "Consultation",
+      title: "Collaboration",
       type: "object",
       fields: [
         {
