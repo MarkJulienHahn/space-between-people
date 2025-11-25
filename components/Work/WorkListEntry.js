@@ -7,7 +7,7 @@ import useWindowDimensions from "../_Hooks/useWindowDimensions";
 
 import { useRouter } from "next/navigation";
 
-const WorkIndexEntry = ({ entry, setIndex }) => {
+const WorkListEntry = ({ entry, setList }) => {
   const [columnWidth, setColumnWidth] = useState(300);
 
   const { windowWidth } = useWindowDimensions();
@@ -15,9 +15,8 @@ const WorkIndexEntry = ({ entry, setIndex }) => {
   const aspectRatio = entry?.images[0].asset.metadata.dimensions.aspectRatio;
 
   const router = useRouter();
-  
   const handleClick = async () => {
-    await setIndex(false);
+    await setList(false);
     router.push(`/work#${entry.slug.current}`);
   };
 
@@ -26,24 +25,22 @@ const WorkIndexEntry = ({ entry, setIndex }) => {
   }, [windowWidth]);
 
   return (
-    <div className="indexEntry" onClick={handleClick}>
-      <div className="indexImgWrapper">
-        <Image
-          src={entry?.images[0].asset.url}
-          responsive
-          width={aspectRatio > 1 ? columnWidth : columnWidth * aspectRatio}
-          height={aspectRatio < 1 ? columnWidth : columnWidth / aspectRatio}
-        />
-        <p
-          style={{
-            width: aspectRatio > 1 ? columnWidth : columnWidth * aspectRatio,
-          }}
-        >
-          {entry.title}
-        </p>
-      </div>
+    <div className="listEntry" onClick={handleClick}>
+
+      <p className="listEntryYear">{entry.year}</p>
+      <p
+        className="listEntryTitle"
+      >
+        {entry.title}
+      </p>
+      <p
+        className="listEntryCategory"
+      >
+        {entry.cat}
+      </p>
+
     </div>
   );
 };
 
-export default WorkIndexEntry;
+export default WorkListEntry;

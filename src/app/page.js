@@ -21,7 +21,10 @@ export default async function page() {
         <div className={"textSection"}>
           <PortableText value={home[0].introText} />
         </div>
-        <h3>What are you interested in?</h3>
+
+
+
+        {/* <h3>What are you interested in?</h3>
         <div className={"homeNavigation"}>
           <Link href={"/about#design"}>
             <div className={"navButton"}>
@@ -40,7 +43,10 @@ export default async function page() {
             </div>
           </Link>
         </div>
-        <ContactSection />
+        <ContactSection /> */}
+
+
+
       </div>
     </main>
   );

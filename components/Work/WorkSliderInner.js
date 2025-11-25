@@ -31,15 +31,10 @@ const WorkSliderInner = ({ image, sliderHeight, setSlideIndex, i }) => {
         style={{ width: "20px", height: "20px" }}
       ></div>
       <div
-        style={{
-          position: "relative",
-          width: "100vw",
-          height: sliderHeight,
-          background: "white",
-        }}
+        className={"sliderImage"}
         onClick={swiperFunction}
       >
-        <Image src={image.asset.url} fill className={"sliderImage"} />
+        <Image src={image.asset.url} fill objectFit="contain" objectPosition="left top" />
       </div>
     </>
   );

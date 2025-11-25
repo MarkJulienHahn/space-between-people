@@ -4,9 +4,9 @@ import WorkIndexEntry from "./WorkIndexEntry";
 const WorkIndex = ({ work, setHeight, index, setIndex }) => {
   const ref = useRef();
 
-  useEffect(() => {
-    setHeight(ref?.current.clientHeight);
-  }, [index]);
+  // useEffect(() => {
+  //   index && setHeight(ref?.current.clientHeight);
+  // }, [index]);
 
   useEffect(() => {
     index && window.scrollTo({ top: 0 });
@@ -15,9 +15,8 @@ const WorkIndex = ({ work, setHeight, index, setIndex }) => {
   return (
     <div
       className="workWrapper indexGrid"
-      style={{ opacity: !index ? "0" : "1" }}
     >
-      <div className="indexWrapper" ref={ref}>
+      <div className="indexWrapper feedOuter" ref={ref}>
         {work.map((entry, i) => (
           <WorkIndexEntry key={i} entry={entry} setIndex={setIndex} />
         ))}

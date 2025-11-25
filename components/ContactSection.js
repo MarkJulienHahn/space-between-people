@@ -4,6 +4,7 @@ import { getAbout, getContact } from "../sanity/sanity-utils";
 export default async function ContactSection() {
   const about = await getAbout();
   const contact = await getContact();
+  
   return (
     <div className={"contactSection"}>
       <div className={"contactColumn"}>

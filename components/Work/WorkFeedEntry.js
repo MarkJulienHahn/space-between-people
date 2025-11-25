@@ -24,6 +24,7 @@ const WorkFeedEntry = ({ entry }) => {
           <h2>{entry?.title}</h2>
         </div>
         <div className="workInfosText">
+          {entry?.cat && <h2 className="workInfosCategory">{entry?.cat}</h2>}
           <PortableText
             value={entry.description}
             components={customSerializers}

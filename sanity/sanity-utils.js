@@ -22,7 +22,7 @@ export async function getWork() {
 
 export async function getAbout() {
   return client.fetch(
-    groq`*[_type == "about"]{..., design{..., "category": category->{...}, image{..., "asset": asset->{...}}}, consulting{..., "category": category->{...}, image{..., "asset": asset->{...}}}, research{..., "category": category->{...}, image{..., "asset": asset->{...}}}}`
+    groq`*[_type == "about"][0]{about, "portrait": portrait.asset->{url}}`
   );
 }
 

@@ -77,13 +77,14 @@ export default defineType({
         },
       ],
     },
-    {
-      title: "Category",
-      name: "category",
-      type: "reference",
-      to: [{ type: "categories" }],
-      validation: (Rule) => Rule.required(),
-    },
+    // {
+    //   title: "Category",
+    //   name: "category",
+    //   type: "reference",
+    //   to: [{ type: "categories" }],
+    //   validation: (Rule) => Rule.required(),
+    // },
+    { title: "Categorie", name: "cat", type: "string" },
 
     orderRankField({ type: "work" }),
   ],

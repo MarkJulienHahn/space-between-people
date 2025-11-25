@@ -6,21 +6,25 @@ import { usePathname } from "next/navigation";
 
 import WorkFeed from "./WorkFeed";
 import WorkIndex from "./WorkIndex";
+import WorkList from "./WorkList";
 import WorkSubNav from "./WorkSubNav";
 
 const WorkPage = ({ work, categories, indexInitial }) => {
   const [index, setIndex] = useState(indexInitial);
+  const [list, setList] = useState(null);
   const [height, setHeight] = useState(null);
   const [filter, setFilter] = useState("");
 
   const pathname = usePathname();
 
   useEffect(() => {
-    !index && setHeight(null);
+    (!index || !list) && setHeight(null);
   }, [index]);
 
   useEffect(() => {
-    pathname.includes("?index") && setIndex(true);
+    pathname.includes("?index") && setIndex(true) && setList(false);
+    pathname.includes("?list") && setIndex(false) && setList(true);
+    !pathname.includes("?list") || !pathname.includes("?index") && setIndex(false) && setList(false);
   }, []);
 
   const workFiltered = filter
@@ -35,12 +39,18 @@ const WorkPage = ({ work, categories, indexInitial }) => {
         setIndex={setIndex}
         filter={filter}
         setFilter={setFilter}
+        list={list}
+        setList={setList}
       />
 
       <div
         className="workPageSwitch"
         style={{
-          transform: index ? "translateX(-100vw)" : "translateX(0)",
+          transform: index
+            ? "translateX(-100vw)"
+            : list
+              ? "translateX(-200vw)"
+              : "translateX(0)",
           height: height,
         }}
       >
@@ -49,6 +59,12 @@ const WorkPage = ({ work, categories, indexInitial }) => {
           work={workFiltered}
           index={index}
           setIndex={setIndex}
+          setHeight={setHeight}
+        />
+        <WorkList
+          work={workFiltered}
+          list={list}
+          setList={setList}
           setHeight={setHeight}
         />
       </div>

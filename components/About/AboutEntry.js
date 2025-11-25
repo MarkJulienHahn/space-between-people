@@ -7,7 +7,7 @@ import { PortableText } from "next-sanity";
 import { useInView } from "react-intersection-observer";
 import useWindowDimensions from "../_Hooks/useWindowDimensions";
 
-const AboutEntry = ({ content, subject, setActive }) => {
+const AboutEntry = ({ content, setActive }) => {
   const { windowWidth } = useWindowDimensions();
   const [isClient, setIsClient] = useState(false);
 
@@ -39,58 +39,28 @@ const AboutEntry = ({ content, subject, setActive }) => {
   return (
     <div
       className="aboutEntryWrapper"
-      ref={ref}
-      id={content?.category?.slug?.current}
     >
-      <h1>
-        <PortableText value={content.headline} />
-      </h1>
-      <h3>{subject}</h3>
-      <PortableText
-        value={content.description}
-        components={customSerializers}
-      />
-
-      <div className="aboutEntry">
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "calc(100vh - 100px)",
-          }}
-        >
-          {isClient && windowWidth && (
-            <Image
-              src={content.image.asset.url}
-              fill
-              style={{
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
-          )}
+      <div className="aboutImageWrapper">
+        <div className="aboutImage">
+          <Image
+            src={content.portrait.url}
+            fill
+            style={{
+              objectFit: "contain",
+              objectPosition: "center",
+            }}
+          />
         </div>
       </div>
 
-      <div className="aboutEntryMobile">
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "60vw",
-          }}
-        >
-          {isClient && windowWidth && (
-            <Image
-              src={content.image.asset.url}
-              fill
-              style={{
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
-          )}
-        </div>
+      <div className="aboutText">
+        <h1>
+          About
+        </h1>
+        <PortableText
+          value={content.about}
+          components={customSerializers}
+        />
       </div>
     </div>
   );
