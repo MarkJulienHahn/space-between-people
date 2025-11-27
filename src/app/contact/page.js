@@ -5,9 +5,6 @@ export default async function page() {
   const contact = await getContact();
   return (
     <div className="contactWrapper">
-      <div className="col-50 caption">
-        <PortableText value={contact[0].intro} />
-      </div>
       <div className="col-50">
         <div className="col-right">
           <div className="col-50">
@@ -25,6 +22,9 @@ export default async function page() {
         <div className="contactLine">
           <p>{contact[0].phone}</p>
         </div>
+      </div>{" "}
+      <div className="col-50 contactLine contactCaption">
+        <PortableText value={contact[0].intro} />
       </div>
     </div>
   );

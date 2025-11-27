@@ -36,31 +36,26 @@ const AboutEntry = ({ content, setActive }) => {
     },
   };
 
+  console.log(content.portrait)
+
   return (
-    <div
-      className="aboutEntryWrapper"
-    >
+    <div className="aboutEntryWrapper">
+      <div className="aboutText">
+        <PortableText value={content.about} components={customSerializers} />
+      </div>
+
       <div className="aboutImageWrapper">
         <div className="aboutImage">
           <Image
             src={content.portrait.url}
-            fill
+            width={content.portrait.metadata.dimensions.width}
+            height={content.portrait.metadata.dimensions.height}
             style={{
               objectFit: "contain",
-              objectPosition: "center",
+              objectPosition: "top",
             }}
           />
         </div>
-      </div>
-
-      <div className="aboutText">
-        <h1>
-          About
-        </h1>
-        <PortableText
-          value={content.about}
-          components={customSerializers}
-        />
       </div>
     </div>
   );

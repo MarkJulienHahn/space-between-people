@@ -22,19 +22,25 @@ const WorkSliderInner = ({ image, sliderHeight, setSlideIndex, i }) => {
     swiperSlide.isActive && setSlideIndex(i + 1);
   }, [swiperSlide]);
 
-
   return (
     <>
       <div
         className="scrollAnchor"
         ref={imgRef}
-        style={{ width: "20px", height: "20px" }}
-      ></div>
-      <div
-        className={"sliderImage"}
-        onClick={swiperFunction}
-      >
-        <Image src={image.asset.url} fill objectFit="contain" objectPosition="left top" />
+        style={{
+          width: "20px",
+          height: "20px",
+          background: "red",
+          zIndex: "1000",
+        }}
+      />
+      <div className={"sliderImage"} onClick={swiperFunction}>
+        <Image
+          src={image.asset.url}
+          fill
+          objectFit="contain"
+          objectPosition="left top"
+        />
       </div>
     </>
   );

@@ -20,8 +20,11 @@ const WorkFeedEntry = ({ entry }) => {
     <div className="workWrapper">
       <div className="workInfos" id={entry.slug.current}>
         <div className="workInfosSection">
-          <p className="workInfoYear">{entry?.year}</p>
-          <h2>{entry?.title}</h2>
+          <div className="workInfosSectionTop">
+            <p className="workInfoYear">{entry?.year}</p>
+            <h2>{entry?.title}</h2>
+          </div>  
+          <WorkSlider entry={entry} />
         </div>
         <div className="workInfosText">
           {entry?.cat && <h2 className="workInfosCategory">{entry?.cat}</h2>}
@@ -31,7 +34,6 @@ const WorkFeedEntry = ({ entry }) => {
           />
         </div>
       </div>
-      <WorkSlider entry={entry} />
     </div>
   );
 };

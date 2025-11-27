@@ -196,7 +196,9 @@ ul {
   margin: var(--space-XS);
   border: 1.8px solid var(--blue);
   border-radius: 9px;
-  transition: border-radius 0.18s ease, opacity 0.18s ease;
+  transition:
+    border-radius 0.18s ease,
+    opacity 0.18s ease;
 }
 
 .navButton:hover {
@@ -285,7 +287,7 @@ ul {
   z-index: 450;
   font-family: "MJH-Medium";
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -310,7 +312,7 @@ ul {
 .listWrapper {
   width: 100vw;
   height: 100vh;
-  margin-bottom: var(--space-M)
+  margin-bottom: var(--space-M);
 }
 
 .workWrapper {
@@ -338,17 +340,21 @@ ul {
 
 .workInfosSection {
   width: 50%;
-  display: flex;
+  padding-right: var(--space-S);
 }
 
+.workInfosSectionTop {
+  display: flex;
+  margin-bottom: var(--space-S);
+}
 
 .workInfosCategory {
-  margin-bottom: var(--space-M)
+  margin-bottom: var(--space-M);
 }
-
 
 .workInfosText {
   width: 50%;
+  padding-right: var(--space-S);
 }
 
 .workInfosText p {
@@ -364,12 +370,14 @@ ul {
 .sliderImage {
   object-fit: contain;
   object-position: left;
-  height: 50vh;
+  max-width: 50vw;
+  height: 60vh;
+  max-height: 1000px;
 }
 
 .scrollAnchor {
-  padding-top: 85.5px;
-  margin-top: -85.5px;
+  position: absolute;
+  transform: translateY(-160px);
 }
 
 .indexGrid {
@@ -380,6 +388,11 @@ ul {
   width: calc(100vw - 0.8 * var(--space-XS));
   display: flex;
   flex-wrap: wrap;
+  padding-top: var(--space-L);
+}
+
+.listWrapper {
+  width: calc(100vw - 4 * var(--space-XS));
   padding-top: var(--space-L);
 }
 
@@ -413,11 +426,21 @@ ul {
   display: flex;
   margin-top: 4px;
   width: 100%;
+  margin-bottom: var(--space-XS);
 }
 
 .credit {
   position: absolute;
   transform: translateX(80px);
+}
+
+.swiper-slide {
+  opacity: 0 !important;
+  cursor: pointer;
+}
+
+.swiper-slide-active {
+  opacity: 1 !important;
 }
 
 .feedOuter {
@@ -438,7 +461,7 @@ ul {
 }
 
 .listEntry:hover {
-  opacity: 0.4
+  opacity: 0.4;
 }
 
 .listEntryYear {
@@ -562,20 +585,18 @@ ul {
 
 .aboutPageWrapper {
   padding-top: var(--space-XL);
-  display: flex;
-  flex-direction: column;
   width: 100vw;
-  align-items: center;
 }
 
 .aboutEntryWrapper {
   padding: 0 var(--space-S) calc(1.8 * var(--space-L));
-  display: flex;
-  max-width: 1800px;
   padding-top: 108px;
   margin-top: -108px;
   gap: var(--space-S);
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .aboutEntryWrapper h1 {
@@ -590,40 +611,41 @@ ul {
 }
 
 .aboutText {
-  width: 50%;
-  max-width: 1200px;
+  max-width: 1000px;
 }
 
 .aboutImageWrapper {
   width: 50%;
-  height: 800px;
   display: flex;
   justify-content: center;
+  margin-top: var(--space-M);
+  margin-bottom: var(--space-M);
 }
 
 .aboutImage {
   position: relative;
-  height: 100%;
-  width: 80%;
 }
 
 .aboutImage img {
-  width: 80%
+  width: 100%;
+  max-width: 800px;
+  height: auto;
 }
-
-
 
 /* CONTACT */
 
 .contactWrapper {
   padding: 360px var(--space-S);
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   min-height: 100vh;
 }
 
 .col-50 {
   width: 50%;
+  max-width: 500px;
 }
 
 .col-right {
@@ -638,8 +660,16 @@ ul {
   max-width: 360px;
 }
 
+.contactCaption p {
+  font-size: var(--fontSize-XS);
+  line-height: var(--lineHeight-XS);
+  letter-spacing: var(--letterSpacing-XS);
+  font-family: "MJH-Regular";
+}
+
 .contactLine {
   padding-top: var(--space-S);
+  text-align: center;
 }
 
 /* ADMINISTRATIVE */
@@ -649,6 +679,10 @@ ul {
   width: 45vw;
   max-width: 1170px;
   min-width: 90vw;
+}
+
+.workSlider {
+  position: relative;
 }
 
 @media screen and (max-width: 1000px) {
@@ -854,6 +888,11 @@ ul {
     margin-top: var(--space-S);
   }
 
+  .indexWrapper,
+  .workWrapper {
+    padding-top: 140px;
+  }
+
   .index {
     margin-top: var(--space-XS);
   }
@@ -876,10 +915,6 @@ ul {
 
   /* ABOUT */
 
-  .aboutEntryWrapper {
-    flex-direction: column-reverse;
-  }
-
   .aboutText,
   .aboutImageWrapper {
     width: 100%;
@@ -891,13 +926,16 @@ ul {
 
   /* CONTACT */
   .contactWrapper {
-    display: block;
-    padding-top: calc(1.8 * var(--space-L));
-    padding-bottom: var(--space-L);
+    padding-top: var(--space-L);
+    justify-content: center;
   }
 
   .col-50 {
     width: 100%;
     padding-bottom: var(--space-M);
+  }
+
+  .listWrapper {
+    padding-top: 140px;
   }
 }

@@ -16,7 +16,7 @@ const WorkList = ({ work, setHeight, list, setList }) => {
     <div
       className="workWrapper indexGrid listWrapper"
     >
-      <div className="indexWrapper feedOuter" ref={ref}>
+      <div className="listWrapper feedOuter" ref={ref}>
         {work.map((entry, i) => (
           <WorkListEntry key={i} entry={entry} setList={setList} />
         ))}

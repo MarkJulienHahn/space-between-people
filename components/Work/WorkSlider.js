@@ -23,6 +23,12 @@ const WorkSlider = ({ entry }) => {
 
   return (
     <div className="workSlider">
+      <div className="index">
+        <span>
+          {slideIndex} / {entry?.images.length}
+        </span>
+        <span className="credit">{entry?.images[slideIndex - 1]?.credits}</span>
+      </div>
       <Swiper
         spaceBetween={50}
         slidesPerView={1}
@@ -41,12 +47,6 @@ const WorkSlider = ({ entry }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="index">
-        <span>
-          {slideIndex} / {entry?.images.length}
-        </span>
-        <span className="credit">{entry?.images[slideIndex - 1]?.credits}</span>
-      </div>
     </div>
   );
 };
