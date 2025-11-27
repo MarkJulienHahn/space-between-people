@@ -46,20 +46,20 @@ export default function Footer({ contact }) {
       <div className="siteMap">
         <ul>
           <li>
-            <Link href="/work">Work</Link>
+            <Link href="/contact">Contact</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/work">Feed</Link>
           </li>
           <li>
             <Link href="/work/index">Index</Link>
-          </li>
+          </li> */}
         </ul>
         <ul>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/contact/imprint">Imprint</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/about#design">Design</Link>
           </li>
           <li>
@@ -67,18 +67,18 @@ export default function Footer({ contact }) {
           </li>
           <li>
             <Link href="/about#Collaboration">Collaboration</Link>
-          </li>
+          </li> */}
         </ul>
         <ul>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact/privacy">Privacy</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/contact/imprint">Imprint</Link>
           </li>
           <li>
             <Link href="/contact/privacy">Privacy</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
